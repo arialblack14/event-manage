@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Event = ({ event }) => {
+const Event = ({ event }) => (
   <div>
     <div>
     <h2>
@@ -42,4 +42,14 @@ const Event = ({ event }) => {
       </li>
     </ul>
   </div>
+)
+
+Event.propTypes = {
+  event: PropTypes.shape(),
 }
+
+Event.defaultProps = {
+  event: undefined,
+}
+
+export default Event;
