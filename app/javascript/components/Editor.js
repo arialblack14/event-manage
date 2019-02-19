@@ -1,7 +1,9 @@
 import React from 'react'
+import { Switch } from 'react-router-dom'
 import axios from 'axios'
 import Header from './Header'
 import EventList from './EventList'
+import EventForm from './EventForm'
 import Event from './Event'
 
 class Editor extends React.Component {
@@ -35,7 +37,10 @@ class Editor extends React.Component {
         <Header />
         <div className="grid">
           <EventList events={events} activeId={Number(eventId)} />
-          <PropsRoute path='/events/:id' component={Event} event={event} />
+          <Switch>
+            <PropsRoute path='/events/new' component={EventForm} />
+            <PropsRoute path='/events/:id' component={Event} event={event} />
+          </Switch>
         </div>
       </div>
     )
